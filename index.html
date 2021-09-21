@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Desktop Scroll Animation</title>
+  </head>
+  <body>
+    <div class="height">SCROLL DOWN<br />Desktop Animation Version</div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 hide__mobile">
+          <div class="scrolling--text">
+            <div class="scrolling--text__position">
+              Se scegli Cambiobike.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div id="section-scroll-text" class="scrolling--line">
+            <div id="scrolling--line--container">
+              <div class="scrolling--line--container__wrapper">
+                <div class="scrolling--line--row__text text--first--child">
+                  Tre accessori inclusi
+                </div>
+                <div
+                  class="scrolling--line--row__line delay--first--child"
+                ></div>
+              </div>
+
+              <div class="scrolling--line--container__wrapper">
+                <div class="scrolling--line--row__text text--second--child">
+                  Assicurazione inclusa
+                </div>
+                <div
+                  class="scrolling--line--row__line delay--second--child"
+                ></div>
+              </div>
+
+              <div class="scrolling--line--container__wrapper">
+                <div class="scrolling--line--row__text text--third--child">
+                  Finanziamento zero
+                </div>
+                <div
+                  class="scrolling--line--row__line delay--third--child"
+                ></div>
+              </div>
+
+              <div class="scrolling--line--container__wrapper">
+                <div class="scrolling--line--row__text text--fourth--child">
+                  Spedizione gratituita
+                </div>
+                <div
+                  class="scrolling--line--row__line delay--fourth--child"
+                ></div>
+              </div>
+
+              <div class="scrolling--line--container__wrapper">
+                <div class="scrolling--line--row__text text--fifth--child">
+                  Reso gratuito entro 30
+                </div>
+                <div
+                  class="scrolling--line--row__line delay--fifth--child"
+                ></div>
+              </div>
+
+              <div class="scrolling--line--container__wrapper">
+                <div class="scrolling--line--row__text text--six--child">
+                  Assistenza gratuita
+                </div>
+                <div class="delay--six--child"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="height">SCROLL UP</div>
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .height {
+    height: 150vh;
+    width: 100%;
+    padding: 20px 0;
+    background: #505050;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 50px;
+    padding-top: 20%;
+    color: #fff;
+    text-align: center;
+  }
+
+  /*Start Text Left Side*/
+  .scrolling--text {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .scrolling--text__position {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    color: #00e3a2;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .scrolling--text__position--box_one {
+    animation: box--top 2s ease forwards;
+    top: 10%;
+  }
+
+  @keyframes box--top {
+    0% {
+      top: 10%;
+    }
+    100% {
+      top: 70%;
+    }
+  }
+
+  .scrolling--text__position--box_two {
+    animation: box--top-2 2s ease forwards;
+    top: 70%;
+  }
+
+  @keyframes box--top-2 {
+    0% {
+      top: 70%;
+    }
+    100% {
+      top: 10%;
+    }
+  }
+
+  /*END Text Left Side*/
+
+  .scrolling--line {
+    display: block;
+    height: 600px;
+  }
+
+  .scrolling--line--container__box {
+    border-left: 1px solid #000;
+    animation: scrolling--line--container__boxBorder 2s ease forwards;
+    animation-delay: 0.3s;
+    height: 0;
+  }
+
+  @keyframes scrolling--line--container__boxBorder {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+
+  .scrolling--line--container__wrapper {
+    height: 100px;
+  }
+
+  .scrolling--line--row__text {
+    padding: 25px;
+    font-size: 30px;
+    height: 100px;
+  }
+
+  .scrolling--line--row__text {
+    opacity: 0;
+    line-height: 1;
+  }
+
+  .text--first--child--add {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+    line-height: 1.5;
+  }
+  .text--second--child--add {
+    opacity: 1;
+    transition: all 1.3s ease-in-out;
+    line-height: 1.5;
+  }
+  .text--third--child--add {
+    opacity: 1;
+    transition: all 1.6s ease-in-out;
+    line-height: 1.5;
+  }
+  .text--fourth--child--add {
+    opacity: 1;
+    transition: all 1.9s ease-in-out;
+    line-height: 1.5;
+  }
+  .text--fifth--child--add {
+    opacity: 1;
+    transition: all 2.1s ease-in-out;
+    line-height: 1.5;
+  }
+  .text--six--child--add {
+    opacity: 1;
+    transition: all 2.4s ease-in-out;
+    line-height: 1.5;
+  }
+
+  .scrolling--line--row__underline {
+    height: 1px;
+    max-width: 0;
+    background-color: black;
+    animation: underlineBorder 2s ease forwards;
+  }
+
+  @keyframes underlineBorder {
+    from {
+      max-width: 0;
+    }
+    to {
+      max-width: 100%;
+    }
+  }
+
+  .delay--first--child {
+    animation-delay: 0.3s;
+  }
+  .delay--second--child {
+    animation-delay: 0.6s;
+  }
+  .delay--third--child {
+    animation-delay: 0.9s;
+  }
+  .delay--fourth--child {
+    animation-delay: 1.2s;
+  }
+  .delay--fifth--child {
+    animation-delay: 1.5s;
+  }
+  .delay--six--child {
+    animation-delay: 1.8s;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .hide__mobile {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  $(document).ready(function () {
+    // Left Title
+    var distance = $(".scrolling--text").offset().top;
+    $(window).scroll(function () {
+      if ($(this).scrollTop() >= distance) {
+        $(".scrolling--text__position").addClass(
+          "scrolling--text__position--box_one"
+        );
+        $(".scrolling--text__position").removeClass(
+          "scrolling--text__position--box_two"
+        );
+      } else {
+        $(".scrolling--text__position").removeClass(
+          "scrolling--text__position--box_one"
+        );
+        $(".scrolling--text__position").addClass(
+          "scrolling--text__position--box_two"
+        );
+      }
+    });
+
+    // Right Lines
+    $(window).scroll(function () {
+      var top_of_element = $("#section-scroll-text").offset().top;
+      var bottom_of_element =
+        $("#section-scroll-text").offset().top +
+        $("#section-scroll-text").outerHeight();
+      var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+      var top_of_screen = $(window).scrollTop();
+
+      if (
+        bottom_of_screen > top_of_element &&
+        top_of_screen < bottom_of_element
+      ) {
+        $("#scrolling--line--container").addClass(
+          "scrolling--line--container__box"
+        );
+        $(".scrolling--line--row__line").addClass(
+          "scrolling--line--row__underline"
+        );
+
+        $(".text--first--child").addClass("text--first--child--add");
+        $(".text--second--child").addClass("text--second--child--add");
+        $(".text--third--child").addClass("text--third--child--add");
+        $(".text--fourth--child").addClass("text--fourth--child--add");
+        $(".text--fifth--child").addClass("text--fifth--child--add");
+        $(".text--six--child").addClass("text--six--child--add");
+      } else {
+        $("#scrolling--line--container").removeClass(
+          "scrolling--line--container__box"
+        );
+        $(".scrolling--line--row__line").removeClass(
+          "scrolling--line--row__underline"
+        );
+
+        $(".text--first--child").removeClass("text--first--child--add");
+        $(".text--second--child").removeClass("text--second--child--add");
+        $(".text--third--child").removeClass("text--third--child--add");
+        $(".text--fourth--child").removeClass("text--fourth--child--add");
+        $(".text--fifth--child").removeClass("text--fifth--child--add");
+        $(".text--six--child").removeClass("text--six--child--add");
+      }
+    });
+  });
+</script>
